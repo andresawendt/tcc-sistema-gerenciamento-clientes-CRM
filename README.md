@@ -29,72 +29,72 @@ O sistema deve permitir que possam ser aplicados filtros de busca para possívei
 
 ## 5. REQUISITOS FUNCIONAIS
 Foi realizado um levantamento dos requisitos funcionais que o sistema deve possuir. São esses:
-[RF001] Autenticar usuários 
+## [RF001] Autenticar usuários 
 Ator: Gerentes e Vendedores
 Descrição: O sistema deverá apresentar uma tela inicial que solicitará ao usuário seu login e sua senha. Ao efetuar seu login, será exibido ao usuário uma nova tela com o menu de opções.
 
-[RF002] Acessar menu  de opções
+## [RF002] Acessar menu  de opções
 Ator: Gerentes e Vendedores
 Descrição: O sistema apresentará uma tela com um menu de opções ao usuário, sendo essas: 1) Buscar clientes; 2) Cadastrar clientes; 3) Editar cadastro de cliente; e 4) Finalizar sessão. Ao digitar algumas das opções 1,2 ou 3, o sistema direcionará o usuário para uma tela de acordo com a opção desejada. Se o usuário escolher a opção 4, será exibida na tela, a seguinte mensagem ao usuário: “Sua sessão foi finalizada”, e com isso, o sistema se encerrará.
 
-[RF003] Buscar clientes
+## [RF003] Buscar clientes
 Ator: Gerentes e Vendedores
 Descrição: Ao escolher a opção “1) Buscar clientes”, será solicitado ao usuário que ele digite CNPJ do cliente que está buscando. O sistema irá consultar no seu banco de dados se o dado informado já existe. 
 Caso o sistema encontre o CNPJ informado, será exibida na tela as informações de cadastro do cliente. Em seguida, o sistema deverá perguntar ao usuário se o mesmo deseja retornar ao menu principal. Se a resposta for “Sim”, o menu de opções será exibido na tela. Se a resposta for “Não”, será exibida na tela, a seguinte mensagem ao usuário: “Sua sessão foi finalizada”, e com isso, o sistema se encerrará. 
 Caso o sistema não encontre o CNPJ informado, será exibida na tela a seguinte mensagem: “Cliente não cadastrado”. Em seguida, o sistema deverá perguntar ao usuário se o mesmo deseja retornar ao menu principal. Se a resposta for “Sim”, o menu de opções será exibido na tela. Se a resposta for “Não”,, será exibida na tela, a seguinte mensagem ao usuário: “Sua sessão foi finalizada”, e com isso, o sistema se encerrará. 
 
-[RF004] Cadastrar clientes
+## [RF004] Cadastrar clientes
 Ator: Gerente e Vendedores
 Descrição: Ao escolher a opção “2) Cadastrar clientes”, será exibida na tela uma mensagem para que o usuário digite os dados do cliente a ser cadastrado. 
 	Após finalizar o cadastro dos dados do cliente, o sistema deverá exibir na tela a seguinte mensagem: “Você deseja salvar o cadastro?”. Se a resposta for “Sim”, o sistema retornará na tela a seguinte mensagem: “Cliente cadastrado com sucesso”, e em seguida, o sistema deverá perguntar ao usuário se o mesmo deseja retornar ao menu principal. Se a resposta for “Sim”, o menu de opções será exibido na tela. Se a resposta for “Não”, será exibida na tela, a seguinte mensagem ao usuário: “Sua sessão foi finalizada”, e com isso, o sistema se encerrará. 
 
-[RF005] Editar cadastro de cliente
+## [RF005] Editar cadastro de cliente
 Ator: Gerente e Vendedores
 Descrição: Ao escolher a opção “3) Editar cadastro de cliente”, o sistema solicitará que o usuário informe o CNPJ do cadastro que ele deseja atualizar. O sistema irá consultar se o CNPJ informado está cadastrado no seu banco de dados, e caso o CNPJ seja encontrado, as informações do cadastro deverão ser exibidas na tela. Em seguida, o usuário deverá selecionar o campo que deseja atualizar no cadastro, e após isso, deverá clicar no botão de “Salvar atualização”. Será retornada na tela a seguinte mensagem ao usuário: “Atualização registrada com sucesso.” Caso o usuário deseje cancelar a atualização do cadastro, ele poderá clicar no botão “Cancelar atualização”.  Em seguida, o sistema deverá perguntar ao usuário se o mesmo deseja retornar ao menu principal. Se a resposta for “Sim”, o menu de opções será exibido na tela. Se a resposta for “Não”, será exibida na tela, a seguinte mensagem ao usuário: “Sua sessão foi finalizada”, e com isso, o sistema se encerrará. 
 
-[RF006]  Filtrar cadastros 
+## [RF006]  Filtrar cadastros 
 Ator: Gerente
 Descrição: No canto superior da tela, deverá ser exibido um botão “Filtros”, no qual o usuário poderá escolher os campos pelos quais deseja filtrar as informações que aparecerão na tela.
 
 ## 6. REQUISITOS NÃO FUNCIONAIS
-	Foram identificados alguns requisitos para melhorar o funcionamento do sistema, apesar de não serem imprescindíveis para o seu funcionamento. São esses: 
-[RNF001] Cadastrar etapas do processo comercial
+Foram identificados alguns requisitos para melhorar o funcionamento do sistema, apesar de não serem imprescindíveis para o seu funcionamento. São esses: 
+## [RNF001] Cadastrar etapas do processo comercial
 	Ator: Gerente
 	Descrição: Essa funcionalidade inclui no menu principal do sistema, uma nova opção para os gerentes: “Cadastrar nova etapa do processo comercial”. Além das etapas que já vem configuradas com o sistema (Oportunidade, Contato realizado, Orçamento enviado e Venda efetivada), essa função permite que o Gerente possa criar novas etapas no processo comercial, alterando a estrutura de armazenamento das informações. 
 
-[RNF002] Cadastrar vendedores
+## [RNF002] Cadastrar vendedores
 	Ator: Gerente
 	Descrição: Essa funcionalidade inclui no menu principal do sistema, a opção de “Cadastrar vendedores”. Além dos vendedores que já vem configuradas como opções do sistema, essa função permite que o Gerente possa efetuar novos cadastros de vendedores, caso haja mudanças na equipe comercial. 
  
-[RNF003] Cadastrar produtos
+## [RNF003] Cadastrar produtos
 	Ator: Gerente
 	Descrição: Essa funcionalidade inclui no menu principal do sistema, a opção de “Cadastrar produtos”. Além dos produtos já cadastrados na estrutura do sistema, essa função permite que o gerente possa cadastrar novas opções de produtos a serem selecionados, caso haja alterações no portfólio de ofertas da empresa. 
 
-[RNF004] Exportar dashboard
+## [RNF004] Exportar dashboard
 Ator: Gerentes
 	Descrição: Essa funcionalidade permite que as informações registradas no sistema, sejam agrupadas e formem um dashboard que possa ser exportado em formato PDF pelo sistema.  
 
-[RNF005] Integrar com o WhatsApp Web - aplicativo de mensagem
+## [RNF005] Integrar com o WhatsApp Web - aplicativo de mensagem
 Ator: Vendedores
 	Descrição: O sistema oferece uma API que permite a sua integração com o whatsapp web do vendedor. Assim, quando o vendedor acessa os dados de telefone whatsapp cadastrado, ao clicar no ícone do telefone, uma nova tela deverá aparecer, direcionando o vendedor para a janela de conversa com o cliente já no aplicativo de mensagem Isso torna mais fácil a interação do vendedor com o cliente, uma vez que retira a necessidade do vendedor ter que digitar o telefone em seu celular, salvar o contato, buscar pelo contato no aplicativo de mensagem  para enfim enviar mensagem. Com a integração, basta um clique para que a mensagem seja enviada diretamente ao cliente.
 
 ## 7. TELAS PREVISTAS
 
-7.1. TELA 1: Autenticação de usuários 
+## 7.1. TELA 1: Autenticação de usuários 
 Descrição: O sistema deverá apresentar uma tela inicial com três campos para o usuário informar seu nome, seu email e sua senha.  
 Registros a serem armazenados: email do usuário e senha do usuário.
 
-7.2. TELA 2: Menu de opções
-	Descrição: O sistema deverá apresentar uma tela com um menu de opções, sendo essas: 1) Buscar clientes; 2) Cadastrar clientes; 3) Gerenciar clientes; e 4) Finalizar sessão. O sistema deverá possuir um campo para registrar a opção escolhida pelo usuário.
+## 7.2. TELA 2: Menu de opções
+Descrição: O sistema deverá apresentar uma tela com um menu de opções, sendo essas: 1) Buscar clientes; 2) Cadastrar clientes; 3) Gerenciar clientes; e 4) Finalizar sessão. O sistema deverá possuir um campo para registrar a opção escolhida pelo usuário.
 Registro a ser armazenado: opção de escolha.
 
-7.3 TELA 3: Busca de clientes
+## 7.3 TELA 3: Busca de clientes
 Descrição: Caso a opção de escolha na tela 2 seja “1) Buscar clientes”, o sistema deverá direcionar o usuário para uma tela com um campo de pesquisa no qual o usuário deverá informar o CNPJ a ser consultado.
 Registro a ser armazenado: cnpj.
 
-7.4. TELA 4: Cadastro de clientes
-	Descrição: Caso a opção de escolha na tela 2 seja “2) Cadastrar clientes”, o sistema deverá direcionar o usuário para uma tela com campos para cadastro das informações do cliente. 
-	Registros a serem armazenados: cnpj, nome da empresa, nome do contato focal, telefone da empresa, email da empresa, cidade da empresa, uf da empresa, responsável, status no funil de vendas, produto e observação. 
+## 7.4. TELA 4: Cadastro de clientes
+Descrição: Caso a opção de escolha na tela 2 seja “2) Cadastrar clientes”, o sistema deverá direcionar o usuário para uma tela com campos para cadastro das informações do cliente. 
+Registros a serem armazenados: cnpj, nome da empresa, nome do contato focal, telefone da empresa, email da empresa, cidade da empresa, uf da empresa, responsável, status no funil de vendas, produto e observação. 
 
 ## 8. TECNOLOGIAS PREVISTAS
 Para desenvolvimento do Sistema, algumas tecnologias serão necessárias e já estão previstas no projeto. Entre as tecnologias estão:
