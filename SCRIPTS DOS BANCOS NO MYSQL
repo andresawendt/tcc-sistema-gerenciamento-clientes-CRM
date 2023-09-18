@@ -1,0 +1,111 @@
+## 10.BANCO DE DADOS NO MySQL
+## 10.1. Script para criação do banco de dados
+-- criação de banco de dados para Projeto de Sistema de Gerenciamento de Clientes
+
+CREATE DATABASE gerenciamento;
+USE gerenciamento;
+
+CREATE TABLE usuario (
+id INT NOT NULL AUTO_INCREMENT,
+email VARCHAR(50) NOT NULL UNIQUE,
+senha VARCHAR(50) NOT NULL, 
+PRIMARY KEY (id)
+); 
+
+CREATE TABLE responsavel (
+usuario_id INT NOT NULL,
+nome VARCHAR(45) NOT NULL,
+cpf VARCHAR(11) NOT NULL UNIQUE,
+telefone INT NOT NULL,
+PRIMARY KEY (cpf),
+FOREIGN KEY (usuario_id) REFERENCES usuario (id)
+);
+
+CREATE TABLE etapa (
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+descricao VARCHAR(200),
+PRIMARY KEY (id)
+); 
+
+CREATE TABLE produto (
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50),
+descricao VARCHAR(200),
+PRIMARY KEY (id)
+); 
+
+CREATE TABLE cliente (
+cnpj VARCHAR(14) NOT NULL UNIQUE,
+nomeCliente VARCHAR(50) NOT NULL,
+nomeRepresentante VARCHAR(50) NOT NULL,
+telefone INT NOT NULL,
+email VARCHAR(50) NOT NULL,
+responsavel_cpf VARCHAR(11) NOT NULL,
+etapa_id INT NOT NULL,
+observacao VARCHAR(200),
+PRIMARY KEY (cnpj),
+FOREIGN KEY (responsavel_cpf) REFERENCES responsavel (cpf),
+FOREIGN KEY (etapa_id) REFERENCES etapa (id)
+); 
+
+CREATE TABLE demanda (
+cliente_cnpj VARCHAR(14) NOT NULL,
+produto_id INT NOT NULL,
+data DATE NOT NULL,
+PRIMARY KEY (cliente_cnpj, produto_id, data),
+FOREIGN KEY (cliente_cnpj) REFERENCES cliente (cnpj),
+FOREIGN KEY (produto_id) REFERENCES produto (id)
+); 
+
+## 10.2. Script para povoamento do banco de dados
+-- povoamento de banco de dados para Projeto de Sistema de Gerenciamento de Clientes
+>>> os dados utilizados abaixo são fictícios >>>
+
+INSERT INTO usuario
+(email, senha) VALUES
+('andresa@centroinova.com.br','12345'),
+('roger@centroinova.com.br','109876'),
+('tereza@centroinova.com.br', '54321');
+
+INSERT INTO responsavel
+(usuario_id, nome, cpf, telefone) VALUES
+(1,'Andresa','76299318082', 81234567),
+(2,'Roger','10063297060', 82345678),
+(3,'Tereza','33703495073', 98976000);
+
+INSERT INTO etapa
+(nome, descricao) VALUES
+('etapa 1','oportunidade'),
+('etapa 2','contato realizado'),
+('etapa 3','envio de orçamento'),
+('etapa 4','venda efetivada');
+
+INSERT INTO produto
+(nome, descricao) VALUES
+('Germinar','programa de depertar empreendedor'),
+('Florescer','programa de fomento para novos negócios'),
+('Frutificar','programa de aceleração de negócios');
+
+INSERT INTO cliente
+(cnpj, nomeCliente, nomeRepresentante, telefone, email, responsavel_cpf, etapa_id, observacao) VALUES
+('01568190000100','Segóia Transportes','Carla Andrade','98765432','carla@segoia.com.br','76299318082',2,'retornar email');
+
+INSERT INTO cliente
+(cnpj, nomeCliente, nomeRepresentante, telefone, email, responsavel_cpf, etapa_id, observacao) VALUES
+('06904203000199','Dental Clean Ltda','Maurício Fragozo','87665432','mauricio@dentalclean.com','76299318082',4,''),
+('89443150000183', 'Medical San','Jorge Moreno', '99861234','jorge@medicalsan.com.br','10063297060',1,'enviar apresentação comercial'),
+('91122717000161','Franza Importados','Joana Albuquerque','86557878','joana@franzaimportados.com.br','33703495073', 2,''),
+('79744069000180','Nova Haz Operadora','Raimunda Constantino','98768900','raimunda@novahaz.com','33703495073',3,'encaminhar email para a equipe comercial'),
+('31028573000157','Pipeline Boards', 'Marta Fagundes','95559000','marta@pipeline.com.br','76299318082',4,'');
+
+INSERT INTO demanda
+(cliente_cnpj,produto_id,data) VALUES
+('06904203000199',2,'2023-06-09'),
+('06904203000199',3,'2023-06-10'),
+('31028573000157',1,'2022-12-19'),
+('01568190000100',1,'2023-01-20'),
+('89443150000183',3,'2023-12-19'),
+('89443150000183',2,'2022-11-15'),
+('91122717000161',1,'2023-02-01');
+
