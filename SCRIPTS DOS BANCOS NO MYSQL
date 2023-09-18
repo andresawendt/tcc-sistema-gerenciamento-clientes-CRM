@@ -1,5 +1,5 @@
-## 10.BANCO DE DADOS NO MySQL
-## 10.1. Script para criação do banco de dados
+## BANCO DE DADOS DO SISTEMA DE GERENCIAMENTO DE CLIENTES DESENVOLVIDOS NO MySQL
+## Script para criação do banco de dados
 -- criação de banco de dados para Projeto de Sistema de Gerenciamento de Clientes
 
 CREATE DATABASE gerenciamento;
@@ -58,7 +58,7 @@ FOREIGN KEY (cliente_cnpj) REFERENCES cliente (cnpj),
 FOREIGN KEY (produto_id) REFERENCES produto (id)
 ); 
 
-## 10.2. Script para povoamento do banco de dados
+## Script para povoamento do banco de dados
 -- povoamento de banco de dados para Projeto de Sistema de Gerenciamento de Clientes
 >>> os dados utilizados abaixo são fictícios >>>
 
