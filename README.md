@@ -104,9 +104,6 @@ Java: desenvolvimento de APIs e interações no frontend.
 Figma: desenvolvimento de interface do usuário.
 Hospedagem e infraestrutura: no momento, hospedagem do sistema em servidores locais, e posterior migração para serviço de nuvem no Amazon Web Services (AWS).
 
-## 9.DIAGRAMA ER DO SISTEMA E DICIONÁRIO DE DADOS
+## 9.DIAGRAMA ER DO SISTEMA 
 ## 9.1. Diagrama Entidade Relacionamento
 <img src="https://github.com/andresawendt/sistemaGerenciamentoClientes_CRM/blob/5f90f8e8ca4133f2af33c33aab7e35949e53336e/MODELO%20BANCO%20DE%20DADOS.png" width=450> 
-
-## 9.2. Dicionário de Dados 
-<img 
